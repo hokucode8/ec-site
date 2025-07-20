@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="/css/user.css" rel="stylesheet"/>
+<title>商品購入ページ</title>
+</head>
+<body>
+  
+<header>
+  <h1>EC Site 𓇼 Toppage</h1>
+</header>
+<table id="userTable">
+<thead>
+  <tr>
+    <th>ID</th><th>商品名</th><th>商品画像</th><th>価格</th><th>カートへ入れる</th>
+  </tr>
+</thead>
+<tbody>
+  <tr th:each="item : ${goods}">
+    <td th:text="${item.goodsId}"></td>
+    <td th:text="${item.goodsName}"></td>
+    <td>
+      <img th:src="@{'/images/' + ${item.goodsId} + '.png'}" alt="商品画像" width="100">
+    </td>
+    <td th:text="${item.formattedPrice}"></td>
+    <td>
+      <form method="post" action="/ecsite/login/addCart">
+        <input type="hidden" name="goodsId" th:value="${item.goodsId}"/>
+        <button type="submit" class="cartBtn">追加</button>
+        <input type="hidden" name="itemCount" value="1"/>
+      </form>
+    </td>
+    </tr>
+</tbody>
+</table>
+   <form name="goodsForm" method="post" action="/ecsite/admin/vewcart">
+       <button  class="viewcartBtn"  type="submit" th:if="${userName!= null}">カートを確認する</button>
+    </form>
+
+</body>
+</html>

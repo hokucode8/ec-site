@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/css/user.css" rel="stylesheet"/>
+<title>ECサイト</title>
+</head>
+
+<body>
+  <header>
+    <h1>miyazaki ECsite Login</h1>
+  </header>
+  <img th:src="@{/images/login.jpg}" alt="ログイン画面の挿入画像" style="max-width: 100%; margin:30px auto 30px auto; display: block;">
+  <div id="loginPage">
+    <h2>ログイン画面</h2>
+        <p th:if="${errMessage}" class="error" th:text="${errMessage}"></p>
+    <form name="loginForm" method="post" action="/ecsite/login/home">
+      <p>ユーザー名</p>
+      <input class="form" type="text" name="userName"/>
+      <p>パスワード</p>
+      <input class="form" type="password" name="password"/>
+      <button class="loginBtn" type="submit">ログイン</button>
+    </form>
+  </div>
+  
+</body>
+</html>

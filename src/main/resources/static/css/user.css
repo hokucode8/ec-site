@@ -1,0 +1,279 @@
+@charset "UTF-8";
+
+/* Google FontsからSacramentoフォントをインポート */
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+/*body全体のmargin/paddingをリセットするための設定*/
+body {
+  margin: 5px 10px 100px 10px;
+  padding:10px 0;
+  font-family: 'Zen Kaku Gothic New', sans-serif; 
+  font-size: 16px;
+}
+
+/*typeがnumberのinputを右寄せに設定*/
+input[type="number"] {
+  text-align:right;
+}
+
+/*headerをflexboxコンテナに設定*/
+header {
+  font-family: 'Sacramento', cursive;
+  display:flex;
+  justify-content: center; /* 水平方向（左右）の中央揃え */
+  align-items: center; /* 垂直方向（上下）の中央揃え */
+  background: #FFA577;
+  color:#F1F1F2;
+  height:70px;
+}
+
+header h1 {
+  margin:0;
+  font-family: 'Sacramento', cursive; /* 英語用フォントを明示 */
+}
+
+header div {
+  margin-left:auto;/*右寄せ*/
+  margin-right:20px;
+  margin-top:10px;
+  text-align:right;
+}
+
+/*ユーザー名とパスワードのinputの幅を設定*/
+input[name=userName] {
+  padding:10px;
+  width:100%;
+  font-size: 1.25rem;
+}
+
+input[name=password] {
+  padding:10px;
+  width:100%;
+  font-size: 1.25rem;
+}
+
+/*tableのデフォルトデザインを設定*/
+table {
+  margin:20px;
+  border-collapse:collapse;
+}
+
+/*table内のtdとthの枠線を設定*/
+table td, table th {
+  border:1px solid grey
+}
+
+/*th(テーブルのヘッダー)を背景色*/
+th {
+  background:#ab76cc;
+  color:#F1F1F2;
+}
+
+/*th内の子要素たちについて、それぞれ幅を設定*/
+th:nth-child(1){
+  width:30px;
+}
+th:nth-child(2){
+  width:150px;
+}
+th:nth-child(3){
+  width:120px;
+}
+th:nth-child(4){
+  width:60px;
+}
+th:nth-child(5){
+  width:120px;
+}
+
+/*td内の子要素等について、それぞれの文字寄せ方向を設定（右寄せ、左寄せ、中央寄せ）*/
+td:nth-child(1){
+  text-align:center;
+}
+td:nth-child(2){
+  text-align:left;
+}
+td:nth-child(3){
+  text-align:center;
+}
+td:nth-child(4){
+  text-align:right;
+}
+td:nth-child(5){
+  text-align:right;
+}
+td:nth-child(6){
+  text-align:center;
+}
+
+/*td内にあるinputの幅と、テキストの右寄せを設定*/
+td input{
+  width:85%;
+  text-align:right;
+}
+
+/*カートテーブル、履歴テーブルのthに対してデザインを設定*/
+table#cart thead tr th, table#history thead tr th{
+  background:#283655 !important;
+  color:#D0E1F9;
+}
+
+/*履歴テーブルのthead内のtrと、thの子要素に対してデザインを設定*/
+table#history thead tr th:nth-child(1){
+  width:150px;
+}
+table#history thead tr th:nth-child(2){
+  width:65px;
+}
+table#history thead tr th:nth-child(3){
+  width:250px;
+}
+
+/*履歴テーブルのtbody内のtrと、tdの子要素に対してデザインを設定*/
+table#history tbody tr td:nth-child(1){
+  padding:0 5px;
+  text-align:left;
+}
+table#history tbody tr td:nth-child(2){
+  padding:0 5px;
+  text-align:right;
+}
+table#history tbody tr td:nth-child(3){
+  padding:0 5px;
+  text-align:left;
+}
+
+/*一般会員用　商品登録ページのデザインを設定*/
+#loginPage{
+  margin: 0 auto; /* 左右のマージンを自動設定して中央寄せ */
+  width: 30%;
+}
+
+#userTable {
+  margin: 50px auto; /* 上下は20px、左右は自動（＝中央寄せ） */
+  width: fit-content; /* コンテンツの幅に合わせる（必要なら） */
+}
+
+/*商品テーブルのthead内のtrと、thの子要素に対してデザインを設定*/
+table#userTable thead tr th:nth-child(1){
+padding:10px 5px;
+width:50px;  
+}
+table#userTable thead tr th:nth-child(2){
+padding:10px 5px;
+width:150px;
+}
+table#userTable thead tr th:nth-child(3){
+padding:10px 5px;
+width:200px;  
+}
+table#userTable thead tr th:nth-child(4){
+padding:10px 5px;
+width:100px;  
+}
+table#userTable thead tr th:nth-child(5){
+width:150px;  
+}
+
+/*商品テーブルのtbody内のtrとtdの子要素に対してデザインを設定*/
+table#userTable tbody tr td:nth-child(1){
+  padding: 15px 10px;
+  text-align:center;
+}
+table#userTable tbody tr td:nth-child(2){
+  padding: 15px 10px;
+  text-align:left;
+}
+table#userTable tbody tr td:nth-child(3){
+  padding: 15px 10px;
+  text-align:center;
+}
+table#userTable tbody tr td:nth-child(4){
+  padding: 15px 10px;
+  text-align:right;
+}
+table#userTable tbody tr td:nth-child(5){
+  text-align:center;
+}
+
+/*errormessageの文字色を赤にするための設定*/
+.error{
+  text-align:center;
+  color:#A11F0C;
+  background-color: rgba(161, 31, 12, 0.5); /* rgba(赤, 緑, 青, 透明度) */
+  border:1px solid #A11F0C;
+  padding: 10px;
+  display: inline-block; /* メッセージの幅を文字に合わせる */
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+#loginPage {
+  font-size: 1rem;
+}
+
+input.form {
+  border: 1px solid #FFA577;
+}
+
+.loginBtn {
+    position: relative;
+    display: flex;
+    padding: 10px 30px;
+    color: #313131; /* 文字の色 */
+    font-size: 1rem;
+    transition: 0.3s ease-in-out;
+    background-color: rgba(255, 165, 119, 0.2); /* 初期の背景色 */
+    border: 1px solid #FFA577; /* 枠線の色 */
+    margin-top:40px;
+}
+
+.loginBtn:hover::before {
+    opacity: 0; /* ホバー時に背景色が消える */
+    transform: scale(0.4, 0.4);
+}
+
+.loginBtn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 2px solid #FFA577; /* 境界線の変更 */
+    transform: scale(1.2, 1.2);
+    background-color: rgba(255, 165, 119, 0.4);
+    z-index: -1; /* 最背面に指定*/
+    
+}
+
+.loginBtn:hover::after {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+
+.cartBtn {
+    display: flex;
+    justify-content: center; /* ← 横方向の中央揃え */
+    align-items: center;     /* ← 縦方向の中央揃え（中の文字） */
+    color: #313131;
+    font-size: 1rem;
+    background-color: rgba(255, 165, 119, 0.2);
+    border: 1px solid #FFA577;
+    padding: 10px 20px; /* ← 見た目も整える */
+    margin: 0 auto; /* ← 親の幅が決まってれば、ボタン自体も中央に寄る */
+}
+
+.viewcartBtn {
+    display: flex;
+    justify-content: center; /* ← 横方向の中央揃え */
+    align-items: center;     /* ← 縦方向の中央揃え（中の文字） */
+    color: #313131;
+    font-size: 1rem;
+    background-color: rgba(255, 165, 119, 0.2);
+    border: 1px solid #FFA577;
+    padding: 10px 20px; /* ← 見た目も整える */
+    margin: 0 auto; /* ← 親の幅が決まってれば、ボタン自体も中央に寄る */
+}

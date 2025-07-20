@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="/css/admin.css" rel="stylesheet"/>
+<title>ECサイト</title>
+</head>
+
+<body>
+  <header>
+    <h1>miyazaki ECsite admin</h1>
+  </header>
+  <img th:src="@{/images/sea.jpeg}" alt="管理ログインの挿入画像" style="max-width: 55%; margin:1% auto 10px auto; display: block;">
+  <div id="adminPage">
+    <h2>管理者用</h2>
+        <p th:if="${errMessage}" class="error" th:text="${errMessage}"></p>
+    <form name="loginForm" method="post" action="/ecsite/admin/welcome">
+      <p>ユーザー名</p>
+      <input class="form" type="text" name="userName"/>
+      <p>パスワード</p>
+      <input class="form" type="password" name="password"/>
+      <button class="loginBtn" type="submit">ログイン</button>
+    </form>
+  </div>
+  
+</body>
+</html>
